@@ -57,7 +57,7 @@
   header.site{ position:sticky; top:0; z-index:50; background:var(--black); border-bottom:1px solid var(--line-dark); }
   .navrow{ display:flex; align-items:center; justify-content:space-between; padding:16px 28px; max-width:1120px; margin:0 auto; }
   .brand{ display:flex; align-items:center; gap:10px; font-family:'Fraunces', serif; font-weight:700; font-size:1.2rem; color:var(--paper); letter-spacing:0.01em; }
-  .brand-mark{ width:34px; height:34px; border-radius:50%; background:var(--orange); display:flex; align-items:center; justify-content:center; color:var(--black); font-family:'Fraunces', serif; font-weight:700; font-size:1.1rem; flex-shrink:0; }
+  .brand-mark{ width:34px; height:34px; border-radius:50%; flex-shrink:0; object-fit:cover; background:var(--orange); }
   .brand span{color:var(--orange);}
   nav.links{display:flex; gap:28px; font-size:0.9rem; font-weight:500;}
   nav.links a{text-decoration:none; color:var(--paper); opacity:0.75; transition:opacity 0.15s;}
@@ -113,8 +113,28 @@
   .story{padding:100px 0;}
   .story .wrap{ display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; }
   .story-copy p{ font-family:'Newsreader', serif; font-size:1.15rem; line-height:1.65; opacity:0.85; margin-top:18px; }
-  .story-frame{ aspect-ratio:4/5; background:linear-gradient(160deg, var(--charcoal) 0%, var(--black-deep) 100%); border-radius:2px; position:relative; overflow:hidden; display:flex; align-items:flex-end; padding:28px; border:1px solid var(--line-dark); }
-  .story-frame::after{ content:"“ Forty years of someone's life doesn't fit in a dumpster. ”"; font-family:'Newsreader', serif; font-style:italic; color:var(--paper); font-size:1.15rem; line-height:1.4; }
+  .story-frame{
+    aspect-ratio:4/5;
+    background-color:var(--black-deep);
+    background-image:
+      linear-gradient(45deg, rgba(221,122,46,0.16) 25%, transparent 25%, transparent 75%, rgba(221,122,46,0.16) 75%, rgba(221,122,46,0.16)),
+      linear-gradient(45deg, rgba(221,122,46,0.16) 25%, transparent 25%, transparent 75%, rgba(221,122,46,0.16) 75%, rgba(221,122,46,0.16)),
+      linear-gradient(160deg, var(--charcoal) 0%, var(--black-deep) 100%);
+    background-size:64px 64px, 64px 64px, 100% 100%;
+    background-position:0 0, 32px 32px, 0 0;
+    border-radius:2px; position:relative; overflow:hidden;
+    display:flex; align-items:flex-end; padding:28px;
+    border:1px solid var(--line-dark);
+  }
+  .story-frame-mark{
+    position:absolute; top:42%; left:50%; transform:translate(-50%,-50%);
+    width:52%; opacity:0.92; pointer-events:none;
+  }
+  .story-quote{
+    position:relative; z-index:2;
+    font-family:'Newsreader', serif; font-style:italic; color:var(--paper);
+    font-size:1.15rem; line-height:1.4;
+  }
   @media (max-width:760px){ .story .wrap{grid-template-columns:1fr;} }
 
   .process{padding:0 0 100px;}
@@ -166,7 +186,7 @@
 <header class="site">
   <div class="navrow">
     <div class="brand">
-      <div class="brand-mark">H</div>
+      <img class="brand-mark" src="assets/emblem.png" alt="Hestern Auctions">
       HESTERN <span>AUCTIONS</span>
     </div>
     <nav class="links">
@@ -269,7 +289,10 @@
       <p>Most estate sales start with an appraisal. We start with a conversation. The people we work with are often clearing out a family home, a parent's collection, or forty years of someone's life — and that deserves more than a walkthrough with a clipboard.</p>
       <p>We take the time to understand what a collection means before we decide what it's worth. It's a small difference in approach that changes how the whole process feels.</p>
     </div>
-    <div class="story-frame"></div>
+    <div class="story-frame">
+      <img class="story-frame-mark" src="assets/emblem.png" alt="">
+      <p class="story-quote">“ Forty years of someone's life doesn't fit in a dumpster. ”</p>
+    </div>
   </div>
 </section>
 
@@ -319,7 +342,7 @@
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <h5>Hestern Auctions</h5>
+        <img src="assets/wordmark.png" alt="Hestern Auctions" style="height:34px; width:auto; margin-bottom:14px;">
         <p style="max-width:320px;">Online estate sale auction house based in Prospect, CT, specializing in collectibles &amp; antiques — with bidders nationwide.</p>
       </div>
       <div>
