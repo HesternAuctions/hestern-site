@@ -93,13 +93,15 @@
   .section-head h2{ font-size:clamp(1.8rem, 3vw, 2.4rem); font-weight:500; margin-top:12px; letter-spacing:-0.01em; }
   .lots{border-top:1px solid var(--line-light);}
   .lot{ display:grid; grid-template-columns:120px 1fr 180px; gap:24px; align-items:center; padding:26px 0; border-bottom:1px solid var(--line-light); text-decoration:none; color:var(--ink); transition:background 0.15s ease; }
+  .lot.has-thumb{ grid-template-columns:72px 100px 1fr 180px; }
+  .lot-thumb{ width:72px; height:72px; border-radius:4px; object-fit:cover; border:1px solid var(--line-light); }
   a.lot:hover{background:rgba(221,122,46,0.06);}
   .lot-date{ font-family:'Public Sans', sans-serif; font-size:0.78rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--orange-deep); }
   .lot-title{ font-family:'Fraunces', serif; font-size:1.4rem; font-weight:500; }
   .lot-desc{ font-size:0.92rem; opacity:0.72; max-width:480px; margin-top:6px; }
   .lot-cta{ font-size:0.85rem; font-weight:700; color:var(--orange-deep); text-align:right; white-space:nowrap; }
   a.lot:hover .lot-cta{color:var(--orange);}
-  @media (max-width:700px){ .lot{grid-template-columns:1fr; gap:6px; padding:22px 0;} .lot-cta{text-align:left; margin-top:8px;} }
+  @media (max-width:700px){ .lot{grid-template-columns:1fr; gap:6px; padding:22px 0;} .lot.has-thumb{grid-template-columns:72px 1fr;} .lot-cta{text-align:left; margin-top:8px;} }
   .auctions-note{ margin-top:18px; font-size:0.85rem; opacity:0.65; font-family:'Newsreader', serif; font-style:italic; }
 
   .why{background:var(--paper-dim); padding:90px 0;}
@@ -245,7 +247,8 @@ src="https://www.facebook.com/tr?id=1316789500226667&ev=PageView&noscript=1"
       <h2 class="display">Currently Live</h2>
     </div>
     <div class="lots">
-      <a class="lot" href="https://www.auctionninja.com/clearinghouseestatesales/sales/details/watertown-ct-antiques-vintage-treasures-everyday-essentials-17571.html?an=f54gp6" target="_blank" rel="noopener">
+      <a class="lot has-thumb" href="https://www.auctionninja.com/clearinghouseestatesales/sales/details/watertown-ct-antiques-vintage-treasures-everyday-essentials-17571.html?an=f54gp6" target="_blank" rel="noopener">
+        <img class="lot-thumb" src="assets/lot-watertown-moped.jpg" alt="1974 Green Puch Maxi Moped, featured item in the Watertown auction">
         <div class="lot-date">Live Now</div>
         <div>
           <div class="lot-title display">Watertown, CT — Antiques, Vintage Treasures &amp; Everyday Essentials</div>
