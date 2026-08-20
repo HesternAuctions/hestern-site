@@ -103,6 +103,15 @@
   a.lot:hover .lot-cta{color:var(--orange);}
   @media (max-width:700px){ .lot{grid-template-columns:1fr; gap:6px; padding:22px 0;} .lot.has-thumb{grid-template-columns:72px 1fr;} .lot-cta{text-align:left; margin-top:8px;} }
   .auctions-note{ margin-top:18px; font-size:0.85rem; opacity:0.65; font-family:'Newsreader', serif; font-style:italic; }
+  .empty-auctions{
+    border-top:1px solid var(--line-light); padding:48px 0; text-align:center;
+  }
+  .empty-auctions p{
+    font-family:'Newsreader', serif; font-style:italic; font-size:1.15rem;
+    color:var(--ink); opacity:0.75; max-width:560px; margin:0 auto; line-height:1.6;
+  }
+  .empty-auctions a{ color:var(--orange-deep); text-decoration:underline; text-underline-offset:2px; font-style:normal; }
+  .empty-auctions a:hover{ color:var(--orange); }
 
   .why{background:var(--paper-dim); padding:90px 0;}
   .why-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:1px; background:var(--line-light); border:1px solid var(--line-light); }
@@ -246,25 +255,8 @@ src="https://www.facebook.com/tr?id=1316789500226667&ev=PageView&noscript=1"
       <div class="eyebrow">Save the Date</div>
       <h2 class="display">Upcoming Auctions</h2>
     </div>
-    <div class="lots">
-      <a class="lot has-thumb" href="https://www.auctionninja.com/clearinghouseestatesales/sales/details/prospect-ct-hestern-august-multiconsignor-part-1-17613.html?an=ynjteq" target="_blank" rel="noopener">
-        <img class="lot-thumb" src="assets/lot-multiconsignor-desk.jpg" alt="Romweber Viking style oak executive desk, featured item in this auction">
-        <div class="lot-date">Closes Aug 17</div>
-        <div>
-          <div class="lot-title display">Prospect, CT — August Multiconsignor Sale, Part 1</div>
-          <div class="lot-desc">An 89-item mixed-consignor sale featuring furniture, home furnishings, and office pieces.</div>
-        </div>
-        <div class="lot-cta">View &amp; Bid →</div>
-      </a>
-      <a class="lot has-thumb" href="https://www.auctionninja.com/the-pickers-alley/sales/details/brookfield-ct-mid-century-art-more--1716.html?an=fm7j2v" target="_blank" rel="noopener">
-        <img class="lot-thumb" src="assets/lot-brookfield-desk.jpg" alt="Kai Kristiansen mid-century free standing desk, featured item in this auction">
-        <div class="lot-date">Closes Aug 18</div>
-        <div>
-          <div class="lot-title display">Brookfield, CT — Mid Century, Art &amp; More</div>
-          <div class="lot-desc">A 153-item collection of mid-century furniture, art, and design pieces.</div>
-        </div>
-        <div class="lot-cta">View &amp; Bid →</div>
-      </a>
+    <div class="empty-auctions">
+      <p>We're between auctions right now — our next sale is being catalogued. Follow us on <a href="https://www.facebook.com/hesternauctions" target="_blank" rel="noopener">Facebook</a> or <a href="https://www.instagram.com/hesternauctions" target="_blank" rel="noopener">Instagram</a> to be the first to know when it goes live, or browse our full catalog on <a href="https://www.auctionninja.com/" target="_blank" rel="noopener">AuctionNinja</a>.</p>
     </div>
   </div>
 </section>
