@@ -112,6 +112,15 @@
   }
   .empty-auctions a{ color:var(--orange-deep); text-decoration:underline; text-underline-offset:2px; font-style:normal; }
   .empty-auctions a:hover{ color:var(--orange); }
+  .coming-soon{
+    border:1px dashed var(--line-light); border-radius:2px;
+    padding:28px; margin-top:8px;
+    display:flex; align-items:baseline; gap:18px; flex-wrap:wrap;
+  }
+  .coming-soon .eyebrow{ white-space:nowrap; }
+  .coming-soon-title{ font-family:'Fraunces', serif; font-size:1.25rem; font-weight:500; margin-bottom:6px; }
+  .coming-soon-desc{ font-size:0.95rem; opacity:0.75; max-width:560px; line-height:1.6; }
+  @media (max-width:700px){ .coming-soon{flex-direction:column; gap:10px;} }
 
   .why{background:var(--paper-dim); padding:90px 0;}
   .why-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:1px; background:var(--line-light); border:1px solid var(--line-light); }
@@ -265,6 +274,13 @@ src="https://www.facebook.com/tr?id=1316789500226667&ev=PageView&noscript=1"
         </div>
         <div class="lot-cta">View &amp; Bid →</div>
       </a>
+    </div>
+    <div class="coming-soon">
+      <div class="eyebrow">Coming Soon</div>
+      <div>
+        <div class="coming-soon-title">Brookfield, CT — Furniture, Recliners &amp; Vintage Doll Collection</div>
+        <div class="coming-soon-desc">A beautiful estate collection featuring furniture, recliners, and rugs, plus a rare set of vintage dolls gathered from missionary trips across the globe. Details and bidding link coming soon.</div>
+      </div>
     </div>
   </div>
 </section>
