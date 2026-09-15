@@ -252,6 +252,22 @@
   .band p{ opacity:0.8; max-width:480px; margin:0 auto 32px; font-family:'Newsreader', serif; font-style:italic; font-size:1.1rem; }
   .band-ctas{display:flex; gap:14px; justify-content:center; flex-wrap:wrap;}
 
+  .faq{padding:0 0 100px;}
+  .faq-list{border-top:1px solid var(--line-light); max-width:760px;}
+  .faq-item{border-bottom:1px solid var(--line-light);}
+  .faq-item summary{
+    padding:24px 0; cursor:pointer; list-style:none;
+    display:flex; justify-content:space-between; align-items:baseline; gap:24px;
+    font-family:'Fraunces', serif; font-size:1.15rem; font-weight:500;
+  }
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::after{
+    content:"+"; font-family:'Public Sans', sans-serif; font-weight:400;
+    font-size:1.4rem; color:var(--orange-deep); flex-shrink:0; transition:transform 0.15s ease;
+  }
+  .faq-item[open] summary::after{content:"–";}
+  .faq-item p{font-size:0.95rem; opacity:0.78; max-width:640px; padding-bottom:24px; line-height:1.6;}
+
   footer{padding:56px 0 40px; font-size:0.88rem; background:var(--paper);}
   .foot-grid{ display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:32px; padding-bottom:32px; border-bottom:1px solid var(--line-light); }
   .foot-grid h5{ font-family:'Public Sans'; font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--orange-deep); margin-bottom:14px; font-weight:700; }
@@ -421,6 +437,33 @@ src="https://www.facebook.com/tr?id=1316789500226667&ev=PageView&noscript=1"
     <div class="beyond">
       <div class="beyond-label">Beyond the Auction</div>
       <p>Once the sale wraps, we also offer full clean-out and cleaning services — so the space is left ready to hand off, list, or move into, with nothing left for you to manage.</p>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Questions</div>
+      <h2 class="display">Common questions</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>How does estate auction consignment work with Hestern?</summary>
+        <p>Hestern handles the process end to end: an in-person walkthrough to review the collection, full photography and cataloguing of every item, an online auction to our national bidder base with active promotion, and prompt settlement once the auction closes with a clear accounting of every item sold.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What happens after the auction closes?</summary>
+        <p>Once the auction wraps, we settle up promptly with a clear accounting of every item sold and clear the space of sold items. We also offer full clean-out and cleaning services afterward, so the space is left ready to hand off, list, or move into.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Does Hestern only sell to local buyers in Connecticut?</summary>
+        <p>No. Hestern is an online estate auction house, so items reach bidders well beyond Connecticut rather than being limited to local foot traffic.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Where is Hestern Auctions based?</summary>
+        <p>Hestern Auctions is based in Prospect, Connecticut, and runs online estate and specialty auctions with a national bidder reach.</p>
+      </details>
     </div>
   </div>
 </section>
