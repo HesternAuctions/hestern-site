@@ -46,18 +46,18 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "How does estate auction consignment work with Hestern?",
+      "name": "What happens to items that don't sell at auction?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Hestern handles the process end to end: an in-person walkthrough to review the collection, full photography and cataloguing of every item, an online auction to our national bidder base with active promotion, and prompt settlement once the auction closes with a clear accounting of every item sold."
+        "text": "Hestern works to price and present every lot so it finds a buyer, and actively promotes each auction through the bidding window to give items the best shot. If something doesn't sell, Hestern will talk through the options with the seller rather than leaving it unresolved."
       }
     },
     {
       "@type": "Question",
-      "name": "What happens after the auction closes?",
+      "name": "Is Hestern an appraiser, or does it buy items outright?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Once the auction wraps, Hestern settles up promptly with a clear accounting of every item sold and clears the space of sold items. Hestern also offers full clean-out and cleaning services afterward, so the space is left ready to hand off, list, or move into."
+        "text": "Hestern is an online auction house, not a fixed-price buyer or formal appraisal service. Consignment items go to auction, where bidding determines the final value based on real market demand."
       }
     },
     {
@@ -126,16 +126,53 @@
   .utility-phone a:hover{color:var(--orange-light);}
 
   header.site{ position:sticky; top:0; z-index:50; background:var(--black); border-bottom:1px solid var(--line-dark); }
-  .navrow{ display:flex; align-items:center; justify-content:space-between; padding:16px 28px; max-width:1120px; margin:0 auto; }
+  .navrow{ display:flex; align-items:center; justify-content:space-between; padding:16px 28px; max-width:1120px; margin:0 auto; gap:16px; }
   .brand{ display:flex; align-items:center; gap:10px; font-family:'Fraunces', serif; font-weight:700; font-size:1.2rem; color:var(--paper); letter-spacing:0.01em; }
   .brand-mark{ width:34px; height:34px; border-radius:50%; flex-shrink:0; object-fit:cover; background:var(--orange); }
   .brand span{color:var(--orange);}
   nav.links{display:flex; gap:28px; font-size:0.9rem; font-weight:500;}
   nav.links a{text-decoration:none; color:var(--paper); opacity:0.75; transition:opacity 0.15s;}
   nav.links a:hover{opacity:1;}
-  .nav-cta{ background:var(--orange); color:var(--black-deep); padding:9px 18px; border-radius:2px; text-decoration:none; font-size:0.85rem; font-weight:700; letter-spacing:0.02em; }
+  .nav-cta{ background:var(--orange); color:var(--black-deep); padding:9px 18px; border-radius:2px; text-decoration:none; font-size:0.85rem; font-weight:700; letter-spacing:0.02em; white-space:nowrap; }
   .nav-cta:hover{background:var(--orange-light);}
-  @media (max-width:760px){ nav.links{display:none;} }
+  .nav-right{display:flex; align-items:center; gap:16px;}
+
+  .nav-mobile{display:none;}
+  @media (max-width:760px){
+    nav.links{display:none;}
+    .nav-mobile{
+      display:block; position:relative;
+    }
+    .nav-mobile summary{
+      list-style:none; cursor:pointer; width:38px; height:38px;
+      display:flex; align-items:center; justify-content:center;
+      border:1px solid rgba(247,242,231,0.3); border-radius:2px;
+    }
+    .nav-mobile summary::-webkit-details-marker{display:none;}
+    .nav-mobile summary::after{
+      content:""; width:18px; height:12px;
+      background-image:
+        linear-gradient(var(--paper), var(--paper)),
+        linear-gradient(var(--paper), var(--paper)),
+        linear-gradient(var(--paper), var(--paper));
+      background-size:18px 2px; background-repeat:no-repeat;
+      background-position:top, center, bottom;
+    }
+    .nav-mobile[open] summary::after{
+      background-image:none; position:relative;
+    }
+    .nav-mobile-panel{
+      position:absolute; top:calc(100% + 10px); right:0;
+      background:var(--black); border:1px solid var(--line-dark); border-radius:2px;
+      padding:10px 0; min-width:220px; box-shadow:0 12px 28px rgba(0,0,0,0.35);
+      display:flex; flex-direction:column;
+    }
+    .nav-mobile-panel a{
+      color:var(--paper); text-decoration:none; opacity:0.85;
+      padding:12px 20px; font-size:0.95rem; font-weight:500;
+    }
+    .nav-mobile-panel a:hover{opacity:1; background:rgba(247,242,231,0.06);}
+  }
   @media (max-width:520px){ .utility-social span.label{display:none;} }
 
   .hero{ background:var(--black); color:var(--paper); position:relative; overflow:hidden; padding:96px 28px 88px; }
@@ -327,9 +364,22 @@ src="https://www.facebook.com/tr?id=1316789500226667&ev=PageView&noscript=1"
       <a href="#auctions">Upcoming Auctions</a>
       <a href="#story">Our Approach</a>
       <a href="#process">Selling With Us</a>
+      <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
     </nav>
-    <a class="nav-cta" href="#contact">Request a Consultation</a>
+    <div class="nav-right">
+      <a class="nav-cta" href="#contact">Start a Consignment</a>
+      <details class="nav-mobile">
+        <summary aria-label="Open menu"></summary>
+        <div class="nav-mobile-panel">
+          <a href="#auctions">Upcoming Auctions</a>
+          <a href="#story">Our Approach</a>
+          <a href="#process">Selling With Us</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </details>
+    </div>
   </div>
 </header>
 
@@ -449,12 +499,12 @@ src="https://www.facebook.com/tr?id=1316789500226667&ev=PageView&noscript=1"
     </div>
     <div class="faq-list">
       <details class="faq-item">
-        <summary>How does estate auction consignment work with Hestern?</summary>
-        <p>Hestern handles the process end to end: an in-person walkthrough to review the collection, full photography and cataloguing of every item, an online auction to our national bidder base with active promotion, and prompt settlement once the auction closes with a clear accounting of every item sold.</p>
+        <summary>What happens to items that don't sell at auction?</summary>
+        <p>Hestern works to price and present every lot so it finds a buyer, and actively promotes each auction through the bidding window to give items the best shot. If something doesn't sell, we'll talk through the options with you rather than leaving it unresolved.</p>
       </details>
       <details class="faq-item">
-        <summary>What happens after the auction closes?</summary>
-        <p>Once the auction wraps, we settle up promptly with a clear accounting of every item sold and clear the space of sold items. We also offer full clean-out and cleaning services afterward, so the space is left ready to hand off, list, or move into.</p>
+        <summary>Is Hestern an appraiser, or does it buy items outright?</summary>
+        <p>Hestern is an online auction house, not a fixed-price buyer or formal appraisal service. Consignment items go to auction, where bidding determines the final value based on real market demand.</p>
       </details>
       <details class="faq-item">
         <summary>Does Hestern only sell to local buyers in Connecticut?</summary>
