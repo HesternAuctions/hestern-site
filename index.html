@@ -140,6 +140,10 @@
   .nav-mobile{display:none;}
   @media (max-width:760px){
     nav.links{display:none;}
+    .navrow{flex-wrap:wrap; row-gap:10px; padding:14px 20px;}
+    .brand{font-size:1rem; gap:7px;}
+    .brand-mark{width:28px; height:28px;}
+    .nav-cta{padding:8px 14px; font-size:0.8rem;}
     .nav-mobile{
       display:block; position:relative;
     }
@@ -209,7 +213,7 @@
   .lot-desc{ font-size:0.92rem; opacity:0.72; max-width:480px; margin-top:6px; }
   .lot-cta{ font-size:0.85rem; font-weight:700; color:var(--orange-deep); text-align:right; white-space:nowrap; }
   a.lot:hover .lot-cta{color:var(--orange);}
-  @media (max-width:700px){ .lot{grid-template-columns:1fr; gap:6px; padding:22px 0;} .lot.has-thumb{grid-template-columns:72px 1fr;} .lot-cta{text-align:left; margin-top:8px;} }
+  @media (max-width:700px){ .lot{grid-template-columns:1fr; gap:6px; padding:22px 0;} .lot.has-thumb{grid-template-columns:72px 1fr;} .lot.has-thumb > div{grid-column:2;} .lot-cta{text-align:left; margin-top:8px;} }
   .auctions-note{ margin-top:18px; font-size:0.85rem; opacity:0.65; font-family:'Newsreader', serif; font-style:italic; }
   .empty-auctions{
     border-top:1px solid var(--line-light); padding:48px 0; text-align:center;
