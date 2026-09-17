@@ -236,11 +236,16 @@
 
   .why{background:var(--paper-dim); padding:96px 0;}
   .why-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:1px; background:var(--line-light); border:1px solid var(--line-light); }
-  .why-card{ background:var(--paper-dim); padding:32px; }
-  .why-card .num{ font-family:'Fraunces', serif; color:var(--orange-deep); font-size:0.85rem; margin-bottom:16px; }
-  .why-card h3{ font-family:'Fraunces', serif; font-size:1.5rem; font-weight:500; margin-bottom:10px; letter-spacing:-0.01em; }
+  .why-card{ background:var(--paper-dim); padding:32px; position:relative; overflow:hidden; }
+  .why-card .num{
+    font-family:'Fraunces', serif; color:var(--orange-deep); opacity:0.13;
+    font-size:6.5rem; font-weight:600; line-height:1; letter-spacing:-0.02em;
+    position:absolute; top:8px; right:16px; pointer-events:none; z-index:0;
+  }
+  .why-card h3, .why-card p{ position:relative; z-index:1; }
+  .why-card h3{ font-family:'Fraunces', serif; font-size:1.5rem; font-weight:500; margin-bottom:10px; letter-spacing:-0.01em; margin-top:56px; }
   .why-card p{font-size:0.9rem; opacity:0.78;}
-  @media (max-width:760px){ .why-grid{grid-template-columns:1fr;} }
+  @media (max-width:760px){ .why-grid{grid-template-columns:1fr;} .why-card .num{font-size:5rem;} }
 
   .story{padding:96px 0;}
   .story .wrap{ display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; }
