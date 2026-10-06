@@ -11,6 +11,16 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://hesternauctions.com/newsletter-issue-05.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://hesternauctions.com/newsletter-issue-04.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
     <loc>https://hesternauctions.com/privacy-policy.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
