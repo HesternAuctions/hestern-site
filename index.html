@@ -384,6 +384,33 @@
 
   ::selection{background:var(--orange-light); color:var(--black-deep);}
   :focus-visible{outline:2px solid var(--orange-deep); outline-offset:3px;}
+
+  /* Instagram slider */
+  .ig{position:relative;overflow:hidden;background:var(--black);color:var(--paper);padding:88px 0 76px;}
+  .ig-bg{position:absolute;inset:-40px;background-size:cover;background-position:center;filter:blur(46px) brightness(.38) saturate(1.2);transform:scale(1.1);transition:background-image .6s;}
+  .ig > *{position:relative;}
+  .ig-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:44px;}
+  .ig-head .eyebrow{color:var(--orange-light);}
+  .ig-head h2{font-family:'Fraunces', serif;font-weight:500;font-size:clamp(1.8rem,3vw,2.4rem);margin:12px 0 0;letter-spacing:-0.01em;}
+  .ig-stage{position:relative;height:min(440px,76vw);perspective:1400px;touch-action:pan-y;user-select:none;cursor:grab;}
+  .ig-stage.drag{cursor:grabbing;}
+  .ig-slide{color:var(--paper);text-decoration:none;position:absolute;top:0;left:50%;width:min(440px,72vw);height:100%;margin-left:calc(min(440px,72vw) / -2);border-radius:6px;overflow:hidden;display:block;background:var(--charcoal);box-shadow:0 30px 60px rgba(0,0,0,.5);transition:transform .6s cubic-bezier(.22,.8,.24,1),opacity .6s,filter .6s;will-change:transform;}
+  .ig-slide img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;}
+  .ig-cap{position:absolute;left:0;right:0;bottom:0;padding:56px 20px 18px;background:linear-gradient(to top,rgba(15,12,9,.88),transparent);display:flex;flex-direction:column;gap:3px;opacity:0;transition:opacity .4s .15s;}
+  .ig-cap b{font-family:'Fraunces', serif;font-weight:500;font-size:1.15rem;line-height:1.25;}
+  .ig-cap i{font-style:normal;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--orange-light);}
+  .ig-slide.active .ig-cap{opacity:1;}
+  .ig-ctrl{display:flex;justify-content:center;align-items:center;gap:22px;margin-top:36px;}
+  .ig-arrow{width:46px;height:46px;border-radius:50%;border:1px solid rgba(247,242,231,.4);background:rgba(15,12,9,.35);color:var(--paper);font-size:1.1rem;cursor:pointer;transition:background .2s,border-color .2s,color .2s;}
+  .ig-arrow:hover{background:var(--orange);border-color:var(--orange);color:#0f0c09;}
+  .ig-dots{display:flex;gap:9px;}
+  .ig-dot{width:8px;height:8px;border-radius:50%;border:0;padding:0;background:rgba(247,242,231,.35);cursor:pointer;transition:width .3s,background .3s;}
+  .ig-dot.on{width:26px;border-radius:4px;background:var(--orange);}
+  .ig-stage:not(.ready){display:flex;gap:12px;overflow-x:auto;height:auto;perspective:none;cursor:auto;}
+  .ig-stage:not(.ready) .ig-slide{position:relative;left:auto;margin:0;flex:0 0 min(300px,70vw);height:min(300px,70vw);}
+  .ig-stage:not(.ready) .ig-cap{opacity:1;}
+  .ig-ctrl[hidden]{display:none;}
+  @media (prefers-reduced-motion: reduce){ .ig-slide,.ig-bg{transition:none !important;} }
   @media (prefers-reduced-motion: reduce){ *{transition:none !important;} }
 </style>
 <!-- Meta Pixel Code -->
@@ -477,6 +504,32 @@ src="https://www.facebook.com/tr?id=1316789500226667&ev=PageView&noscript=1"
     <div class="empty-auctions">
       <p>No auctions are live right now. New sales go up regularly, so <a href="https://docs.google.com/forms/d/1ByZfHxPhG-I8BXgWEmDo8ZT7Ec9nNxWlXTU7X0h5jGM/viewform" target="_blank" rel="noopener">join the mailing list</a> to hear first, or <a href="https://www.auctionninja.com/clearinghouseestatesales/" target="_blank" rel="noopener">browse our storefront on AuctionNinja</a>.</p>
     </div>
+  </div>
+</section>
+
+<section class="ig" id="instagram" aria-roledescription="carousel" aria-label="Hestern Auctions on Instagram">
+  <div class="ig-bg" id="igBg"></div>
+  <div class="wrap">
+    <div class="ig-head">
+      <div>
+        <div class="eyebrow">@hesternauctions</div>
+        <h2 class="display">Follow along on Instagram</h2>
+      </div>
+      <a class="btn btn-primary" href="https://www.instagram.com/hesternauctions" target="_blank" rel="noopener">Follow on Instagram →</a>
+    </div>
+  </div>
+  <div class="ig-stage" id="igStage">
+      <a class="ig-slide" href="https://www.instagram.com/hesternauctions" target="_blank" rel="noopener"><img src="assets/newsletter/issue-06/s2000-hero.jpg" alt="2007 Honda S2000" loading="lazy" decoding="async" draggable="false"><span class="ig-cap"><b>2007 Honda S2000</b><i>Prospect, CT</i></span></a>
+      <a class="ig-slide" href="https://www.instagram.com/hesternauctions" target="_blank" rel="noopener"><img src="assets/lot-oakville-clocks.jpg" alt="Antique clock set" loading="lazy" decoding="async" draggable="false"><span class="ig-cap"><b>Antique clock set</b><i>Oakville, CT</i></span></a>
+      <a class="ig-slide" href="https://www.instagram.com/hesternauctions" target="_blank" rel="noopener"><img src="assets/lot-westhaven-mustang.jpg" alt="Vintage Ford Mustang" loading="lazy" decoding="async" draggable="false"><span class="ig-cap"><b>Vintage Ford Mustang</b><i>West Haven, CT</i></span></a>
+      <a class="ig-slide" href="https://www.instagram.com/hesternauctions" target="_blank" rel="noopener"><img src="assets/lot-avon-desk.jpg" alt="Antique drop-front desk" loading="lazy" decoding="async" draggable="false"><span class="ig-cap"><b>Antique drop-front desk</b><i>Avon, CT</i></span></a>
+      <a class="ig-slide" href="https://www.instagram.com/hesternauctions" target="_blank" rel="noopener"><img src="assets/lot-prospect-skis.jpg" alt="Preseason ski auction" loading="lazy" decoding="async" draggable="false"><span class="ig-cap"><b>Preseason ski auction</b><i>Prospect, CT</i></span></a>
+      <a class="ig-slide" href="https://www.instagram.com/hesternauctions" target="_blank" rel="noopener"><img src="assets/lot-shelton-loveseat.jpg" alt="Tufted velvet loveseat" loading="lazy" decoding="async" draggable="false"><span class="ig-cap"><b>Tufted velvet loveseat</b><i>Shelton, CT</i></span></a>
+  </div>
+  <div class="ig-ctrl" id="igCtrl" hidden>
+    <button class="ig-arrow" id="igPrev" type="button" aria-label="Previous photo">←</button>
+    <div class="ig-dots" id="igDots"></div>
+    <button class="ig-arrow" id="igNext" type="button" aria-label="Next photo">→</button>
   </div>
 </section>
 
@@ -690,6 +743,113 @@ src="https://www.facebook.com/tr?id=1316789500226667&ev=PageView&noscript=1"
   reveal('.lot');
   reveal('.faq-item');
   reveal('.story-copy, .story-frame', { stagger: 0.15 });
+})();
+</script>
+<script>
+/* Instagram slider: shows the latest posts from the Behold feed, falling back to the hand-picked photos above. */
+(function(){
+  var FEED='https://feeds.behold.so/Oxa0dLUTrVQV71OP921x';
+  var IG='https://www.instagram.com/hesternauctions';
+  var sec=document.getElementById('instagram'); if(!sec) return;
+  var stage=document.getElementById('igStage'),ctrl=document.getElementById('igCtrl'),dotsEl=document.getElementById('igDots'),bg=document.getElementById('igBg');
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var slides=[],n=0,cur=0,timer=null,visible=false,hover=false,moved=false,x0=null;
+
+  function off(i){var d=i-cur;if(d>n/2)d-=n;if(d<-n/2)d+=n;return d}
+  function render(){
+    if(!n) return;
+    var w=slides[0].offsetWidth,step=w*(window.innerWidth<700?0.62:0.72);
+    slides.forEach(function(s,i){var d=off(i),a=Math.abs(d),vis=a<=2;
+      s.style.transform='translateX('+(d*step)+'px) translateZ('+(-a*140)+'px) rotateY('+(-d*14)+'deg) scale('+(a===0?1:0.86)+')';
+      s.style.opacity=vis?(a===0?1:(a===1?0.6:0.25)):0;
+      s.style.pointerEvents=vis?'auto':'none';
+      s.style.zIndex=10-a;
+      s.style.filter=a===0?'none':'brightness(.7)';
+      s.classList.toggle('active',a===0);
+      s.tabIndex=a===0?0:-1;
+      s.setAttribute('aria-hidden',vis?'false':'true');
+    });
+    [].forEach.call(dotsEl.children,function(d,i){d.classList.toggle('on',i===cur)});
+    var img=slides[cur].querySelector('img'); if(img) bg.style.backgroundImage='url("'+img.currentSrc+'")';
+  }
+  function schedule(){
+    clearInterval(timer);
+    if(reduce||!visible||hover||n<2) return;
+    timer=setInterval(function(){cur=(cur+1)%n;render()},4500);
+  }
+  function go(i){cur=(i+n)%n;render();schedule()}
+
+  function build(list){
+    stage.innerHTML='';dotsEl.innerHTML='';
+    list.forEach(function(p,i){
+      var a=document.createElement('a');a.className='ig-slide';a.href=p.href;a.target='_blank';a.rel='noopener';
+      var im=document.createElement('img');im.src=p.img;im.alt=p.alt;im.loading='lazy';im.decoding='async';im.draggable=false;
+      var cap=document.createElement('span');cap.className='ig-cap';
+      var b=document.createElement('b');b.textContent=p.title;cap.appendChild(b);
+      if(p.sub){var it=document.createElement('i');it.textContent=p.sub;cap.appendChild(it)}
+      a.appendChild(im);a.appendChild(cap);stage.appendChild(a);
+      a.addEventListener('click',function(e){if(moved){e.preventDefault();return}if(i!==cur){e.preventDefault();go(i)}});
+      var d=document.createElement('button');d.type='button';d.className='ig-dot';d.setAttribute('aria-label','Go to photo '+(i+1));d.onclick=function(){go(i)};dotsEl.appendChild(d);
+    });
+    adopt();
+  }
+  function adopt(){
+    slides=[].slice.call(stage.querySelectorAll('.ig-slide'));n=slides.length;cur=0;
+    if(!n) return;
+    stage.classList.add('ready');ctrl.hidden=n<2;render();schedule();
+  }
+
+  document.getElementById('igNext').onclick=function(){go(cur+1)};
+  document.getElementById('igPrev').onclick=function(){go(cur-1)};
+  document.addEventListener('keydown',function(e){if(!visible||!n)return;if(e.key==='ArrowRight')go(cur+1);if(e.key==='ArrowLeft')go(cur-1)});
+  stage.addEventListener('pointerdown',function(e){x0=e.clientX;moved=false;stage.classList.add('drag')});
+  window.addEventListener('pointerup',function(e){if(x0===null)return;var dx=e.clientX-x0;stage.classList.remove('drag');if(Math.abs(dx)>40){moved=true;go(cur+(dx<0?1:-1));setTimeout(function(){moved=false},60)}x0=null});
+  sec.addEventListener('mouseenter',function(){hover=true;schedule()});
+  sec.addEventListener('mouseleave',function(){hover=false;schedule()});
+  sec.addEventListener('focusin',function(){hover=true;schedule()});
+  sec.addEventListener('focusout',function(){hover=false;schedule()});
+  window.addEventListener('resize',render);
+
+  /* Convert Behold posts into slides */
+  function pickImg(p){
+    if(p.mediaType==='VIDEO'&&p.thumbnailUrl) return p.thumbnailUrl;
+    var sz=p.sizes||{};var s=(sz.large||sz.medium||sz.full||{}).mediaUrl;
+    return s||(p.mediaType==='VIDEO'?null:p.mediaUrl)||p.thumbnailUrl||null;
+  }
+  function toSlides(data){
+    var out=[];
+    ((data&&data.posts)||[]).forEach(function(p){
+      var img=pickImg(p);if(!img||!p.permalink)return;
+      var cap=(p.prunedCaption||p.caption||'').replace(/\s+/g,' ').trim();
+      var title=cap.length>90?cap.slice(0,87).replace(/\s+\S*$/,'')+'…':cap;
+      var sub='';try{sub=new Date(p.timestamp).toLocaleDateString('en-US',{month:'short',day:'numeric'})}catch(e){}
+      out.push({href:p.permalink,img:img,alt:cap?('Instagram post: '+title):'Hestern Auctions Instagram post',title:title||'View on Instagram',sub:sub});
+    });
+    return out.slice(0,8);
+  }
+
+  /* Load the feed once, only when the section is near the screen, and cache it briefly so page views stay low */
+  var loaded=false;
+  function loadFeed(){
+    if(loaded) return;loaded=true;
+    var cached=null;
+    try{var c=JSON.parse(sessionStorage.getItem('hestern_ig')||'null');if(c&&Date.now()-c.t<30*60*1000)cached=c.data}catch(e){}
+    if(cached){var l=toSlides(cached);if(l.length)build(l);return}
+    var ctl=window.AbortController?new AbortController():null;
+    var to=setTimeout(function(){if(ctl)ctl.abort()},6000);
+    fetch(FEED,ctl?{signal:ctl.signal}:{}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(data){
+      clearTimeout(to);var l=toSlides(data);if(!l.length)return;
+      try{sessionStorage.setItem('hestern_ig',JSON.stringify({t:Date.now(),data:data}))}catch(e){}
+      build(l);
+    }).catch(function(){clearTimeout(to)});
+  }
+
+  adopt(); /* start with the hand-picked photos already on the page */
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(es){es.forEach(function(e){
+      visible=e.isIntersecting;if(visible)loadFeed();schedule();
+    })},{rootMargin:'300px 0px'}).observe(sec);
+  } else {visible=true;loadFeed();}
 })();
 </script>
 </body>
