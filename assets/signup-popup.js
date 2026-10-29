@@ -7,7 +7,7 @@
   // "Get pre-filled link" URL: POST_URL = .../forms/d/e/<FORM_ID>/formResponse, ENTRY = 'entry.123456789'
   var POST_URL = '';
   var ENTRY = '';
-  var KEY = 'hestern_signup_popup', HIDE_DAYS = 30;
+  var KEY = 'hestern_signup_popup', HIDE_DAYS = 1;
   // ---------------------------------------------------------------------------
   function get(){ try{ return JSON.parse(localStorage.getItem(KEY)||'null'); }catch(e){ return null; } }
   function set(v){ try{ localStorage.setItem(KEY, JSON.stringify(v)); }catch(e){} }
