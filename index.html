@@ -263,6 +263,14 @@
   @media (max-width:700px){ .lot{grid-template-columns:1fr; gap:6px; padding:22px 0;} .lot.has-thumb{grid-template-columns:72px 1fr;} .lot.has-thumb > div{grid-column:2;} .lot-cta{text-align:left; margin-top:8px;} }
 
   .auctions-note{ margin-top:18px; font-size:0.85rem; opacity:0.65; font-family:'Newsreader', serif; font-style:italic; }
+  .game-promo{ background:var(--black); color:var(--paper); padding:72px 28px; }
+  .game-promo .wrap{ display:grid; grid-template-columns:1.15fr 1fr; gap:48px; align-items:center; }
+  .game-promo a.cover{ display:block; border:3px solid var(--orange); box-shadow:10px 10px 0 rgba(221,122,46,0.25); line-height:0; }
+  .game-promo a.cover img{ width:100%; height:auto; display:block; }
+  .game-promo h2{ margin:10px 0 14px; font-size:clamp(2rem,4.4vw,3.2rem); line-height:1.05; }
+  .game-promo p{ font-family:'Newsreader', serif; font-size:1.2rem; line-height:1.5; opacity:0.88; max-width:440px; }
+  .game-promo .btn{ margin-top:26px; font-size:1.1rem; padding:18px 34px; }
+  @media (max-width:760px){ .game-promo{ padding:52px 20px; } .game-promo .wrap{ grid-template-columns:1fr; gap:30px; } .game-promo .btn{ display:block; text-align:center; } }
   .empty-auctions{
     border-top:1px solid var(--line-light); padding:48px 0; text-align:center;
   }
@@ -546,6 +554,20 @@ src="https://www.facebook.com/tr?id=1316789500226667&ev=PageView&noscript=1"
       <h2 class="display">Upcoming Auctions</h2>
     </div>
     <div class="empty-auctions"><p>No auctions are live right now. New sales go up regularly, so <a href="https://docs.google.com/forms/d/1ByZfHxPhG-I8BXgWEmDo8ZT7Ec9nNxWlXTU7X0h5jGM/viewform" target="_blank" rel="noopener">join the mailing list</a> to hear first, or <a href="https://www.auctionninja.com/clearinghouseestatesales/" target="_blank" rel="noopener">browse our storefront on AuctionNinja</a>.</p></div>
+  </div>
+</section>
+
+<section class="game-promo" id="game">
+  <div class="wrap">
+    <a class="cover" href="/game/" aria-label="Play Auction Rider">
+      <img src="assets/game-cover.jpg" width="1200" height="630" loading="lazy" alt="Auction Rider: a pixel-art game cover showing Roger, the Hestern Auctions office dog, riding a bike down a neighborhood street past a Hestern Auctions house">
+    </a>
+    <div>
+      <div class="eyebrow">Free to Play</div>
+      <h2 class="display">Play Auction Rider</h2>
+      <p>Ride with Roger, the Hestern Auctions office dog, and deliver flyers through the neighborhood. Works on your phone or computer.</p>
+      <a class="btn btn-primary" href="/game/">Play the Game →</a>
+    </div>
   </div>
 </section>
 
