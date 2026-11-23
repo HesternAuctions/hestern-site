@@ -1,0 +1,15 @@
+# Netlify configuration for hesternauctions.com.
+#
+# The site is plain static HTML served from the repo root; there is no build step.
+
+# Show the Hestern Auctions game at hesternauctions.com/game.
+# This is a rewrite (status 200), not a redirect: the address bar stays on
+# hesternauctions.com/game/ while Netlify fetches the page from the game's own
+# site. The game page adds the trailing slash to /game itself, so no separate
+# /game -> /game/ rule is needed (Netlify treats both spellings as one path,
+# and such a rule would loop).
+[[redirects]]
+  from = "/game/*"
+  to = "https://hestern-game.netlify.app/:splat"
+  status = 200
+  force = true
