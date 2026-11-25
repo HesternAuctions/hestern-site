@@ -205,6 +205,11 @@
   .past-text{padding:18px 20px; display:flex; flex-direction:column; gap:6px; font-family:'Source Serif 4',Georgia,serif; font-size:16px; line-height:1.45;}
   .past-text b{font-family:Archivo,sans-serif; font-weight:900; font-size:24px; line-height:1; letter-spacing:-0.02em;}
   .past-where{font-family:Archivo,sans-serif; font-size:12.5px; font-weight:700; letter-spacing:0.08em;}
+  .coming{margin:28px 56px 0; background:var(--ink); color:var(--paper-light); padding:36px 40px; display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.2fr); gap:36px; align-items:center;}
+  .coming .eyebrow{font-size:13px; font-weight:700; letter-spacing:0.12em; color:#F4B06A;}
+  .coming h3{margin:8px 0 0; font-weight:900; font-size:clamp(30px,4vw,48px); line-height:0.95; letter-spacing:-0.03em;}
+  .coming p{margin:0; font-family:'Source Serif 4',Georgia,serif; font-size:17px; line-height:1.55;}
+  .coming .note{margin-top:12px; font-size:14px; color:#C9C5BD; font-family:Archivo,sans-serif;}
   @media (max-width:900px){
     .collage-13{grid-template-rows:repeat(13,44px);}
     .bike-panel{padding:0 14px; gap:6px;}
@@ -213,6 +218,7 @@
     .game-cover, .level-row, .roger, .bristol, .wrapped{margin-left:0; margin-right:0; padding-left:24px; padding-right:24px;}
     .bristol{margin-left:24px; margin-right:24px; padding:0; grid-template-columns:1fr;}
     .bristol-photos .two img{height:150px;}
+    .coming{margin-left:24px; margin-right:24px; padding:26px 24px; grid-template-columns:1fr; gap:16px;}
     .level-row{grid-template-columns:1fr;}
     .roger{grid-template-columns:1fr;}
     .roger > img{max-width:360px;}
@@ -260,7 +266,7 @@
     <img class="px contain" style="grid-column:5/span 4; grid-row:12/span 2; background:#2B2725;" src="assets/newsletter/issue-07/level-night.png" alt="Secret level card: Midnight Clearance">
   </div>
 
-  <div class="collage-caption">AUCTION RIDER&nbsp; |&nbsp; ROGER THE CEO&nbsp; |&nbsp; YAMAHA VIRAGO&nbsp; |&nbsp; MURANO&nbsp; |&nbsp; FENTON&nbsp; |&nbsp; BRISTOL, CT&nbsp; |&nbsp; PLAY FREE AT HESTERNAUCTIONS.COM/GAME</div>
+  <div class="collage-caption">AUCTION RIDER&nbsp; |&nbsp; ROGER THE CEO&nbsp; |&nbsp; YAMAHA VIRAGO&nbsp; |&nbsp; MURANO&nbsp; |&nbsp; FENTON&nbsp; |&nbsp; BRISTOL, CT&nbsp; |&nbsp; FAIRFIELD, CT&nbsp; |&nbsp; PLAY FREE AT HESTERNAUCTIONS.COM/GAME</div>
 
   <div class="subscribe-band">
     <div>
@@ -325,7 +331,7 @@
   </div>
 
   <div class="section-head" id="auctions">
-    <h2>Live now in Bristol</h2>
+    <h2>Live now, and up next</h2>
     <span><a href="index.html#auctions">The latest on hesternauctions.com</a></span>
   </div>
 
@@ -343,6 +349,20 @@
       <p>165 items, from Murano and Fenton glass to the featured lot: a red Yamaha Virago with just 9,123 miles on the clock. Chrome, spoked wheels, saddlebags and a backrest. Like every Hestern lot, it starts at $1.</p>
       <span class="pickup">Local pickup only: Wednesday, Dec 2, 2:00–5:30 PM</span>
       <a class="card-btn btn-accent" href="https://www.auctionninja.com/the-pickers-alley/sales/details/bristol-ct-from-murano-to-motorcycles-yamaha-fenton-more--2017.html" target="_blank" rel="noopener">Browse and bid</a>
+    </div>
+  </div>
+
+  <div class="coming">
+    <div>
+      <span class="eyebrow">COMING SOON · FAIRFIELD, CT</span>
+      <h3>Everything in this house starts at $1.</h3>
+    </div>
+    <div>
+      <p>Our next house is in Fairfield. A full kitchen, a blue sofa, a Beethoven portrait, teapots and figurines, old stock certificates, a backgammon board, bikes and a Ryobi workbench in the garage. Every lot starts at $1.</p>
+      <div class="share-row" style="margin-top:16px;">
+        <a class="share-accent" href="https://www.instagram.com/hesternauctions" target="_blank" rel="noopener">Watch the preview</a>
+      </div>
+      <p class="note">Dates and the full listing go up on hesternauctions.com when bidding opens.</p>
     </div>
   </div>
 
@@ -379,6 +399,7 @@
         <a class="card-btn btn-accent" href="https://www.auctionninja.com/the-pickers-alley/sales/details/bristol-ct-from-murano-to-motorcycles-yamaha-fenton-more--2017.html" target="_blank" rel="noopener">Browse and bid</a>
       </div>
       <div class="cal-item"><b>Bristol pickup</b><span>Wednesday, Dec 2, 2:00–5:30 PM. Local pickup only.</span></div>
+      <div class="cal-item"><b>Fairfield, CT</b><span>Coming soon. Everything in the house starts at $1.</span></div>
       <div class="cal-item"><b>Auction Rider</b><span>Free to play now. Top score each month gets a shoutout. <a href="/game/">Play</a></span></div>
       <span class="card-note">Every auction starts at $1. <a href="index.html#auctions">All Hestern auctions</a></span>
     </div>
